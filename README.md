@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Storybook](https://storybook.js.org) demo by Clever Cloud.
 
-## Getting Started
+This project is configured in a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, run the development server:
+The app uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Deploy on Clever Cloud
+ 
+ Storybook is deployed easily on a Node.js runtime on Clever Cloud. No add-on is needed.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ [📖 Check our Node.js documentation for further configuration](https://www.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Port configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+ Apps on Clever Cloud need to listen on port 8080. Port already has been configured in this repo. To change yours in your project, go to `package.json` and change the `-p` argument.
 
-## Learn More
+ ```json
+ "scripts": {
+    ...
+    "storybook": "storybook dev -p 8080",
+    ...
+ }
+ ```
 
-To learn more about Next.js, take a look at the following resources:
+### Environment variable
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ Make sure you inject this environment variable: `CC_RUN_COMMAND="npm run storybook"`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[📖 Check all environment variables your can use on Clever Cloud](https://www.clever-cloud.com/doc/reference/reference-environment-variables/)
